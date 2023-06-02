@@ -2,10 +2,10 @@
 
 TensorFlow Lite bindings for Xamarin.Android
 
-**Current code will bind TensorFlow.Lite 2.10.0**
+**Current code will bind TensorFlow.Lite 2.11.0**
 
 This codebase originates from: https://github.com/xamarin/XamarinComponents
-but is updated to bind tensorflow lite 2.10.0
+but is updated to bind tensorflow lite 2.11.0
 
 
  * GitHub project: https://github.com/tensorflow/tensorflow/ 
