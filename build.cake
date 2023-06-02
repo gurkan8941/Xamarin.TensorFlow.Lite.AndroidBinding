@@ -1,18 +1,18 @@
 
 var TARGET = Argument("t", Argument("target", "ci"));
 
-var TENSOR_FLOW_LITE_NUGET_VERSION = "2.9.8";
-var TENSOR_FLOW_LITE_AAR_VERSION = "2.9.0";
+var TENSOR_FLOW_LITE_API_AAR_VERSION = "2.10.0";
+var TENSOR_FLOW_LITE_AAR_VERSION = "2.10.0";
+var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.10.0";
 
-var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.9.8";
-var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.9.0";
+var TENSOR_FLOW_LITE_NUGET_VERSION = "2.10.1";
+var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.10.1";
+var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.10.1";
 
-var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.9.8";
-
-var TENSOR_FLOW_LITE_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_AAR_VERSION}.aar";
-var TENSOR_FLOW_LITE_API_URL_POM_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_AAR_VERSION}.pom";
-var TENSOR_FLOW_LITE_API_JAVADOC_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_AAR_VERSION}-javadoc.aar";
-var TENSOR_FLOW_LITE_API_SOURCES_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_AAR_VERSION}-sources.aar";
+var TENSOR_FLOW_LITE_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar";
+var TENSOR_FLOW_LITE_API_URL_POM_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.pom";
+var TENSOR_FLOW_LITE_API_JAVADOC_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}-javadoc.aar";
+var TENSOR_FLOW_LITE_API_SOURCES_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}-sources.aar";
 
 
 var TENSOR_FLOW_LITE_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}.aar";
