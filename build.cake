@@ -6,10 +6,10 @@ var TENSOR_FLOW_LITE_AAR_VERSION = "2.12.0";
 var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.12.0";
 var TENSOR_FLOW_LITE_GPU_API_AAR_VERSION = "2.12.0";
 
-var TENSOR_FLOW_LITE_NUGET_VERSION = "2.12.1";
-var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.12.1";
-var TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION = "2.12.1";
-var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.12.1";
+var TENSOR_FLOW_LITE_NUGET_VERSION = "2.12.2";
+var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.12.2";
+var TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION = "2.12.2";
+var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.12.2";
 
 
 var TENSOR_FLOW_LITE_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar";
@@ -54,10 +54,10 @@ Task("externals")
 {
 	EnsureDirectoryExists("./externals/");
 	
-	DownloadFile(TENSOR_FLOW_LITE_API_URL_AAR_VERSION, $"./externals/tensorflow-lite-api-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_API_URL_AAR_VERSION, $"./externals/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_API_URL_POM_VERSION, "./externals/tensorflow-lite-api.pom");
-	DownloadFile(TENSOR_FLOW_LITE_API_JAVADOC_VERSION, $"./externals/tensorflow-lite-api-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
-	DownloadFile(TENSOR_FLOW_LITE_API_SOURCES_VERSION, $"./externals/tensorflow-lite-api-sources-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_API_JAVADOC_VERSION, $"./externals/tensorflow-lite-api-javadoc-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_API_SOURCES_VERSION, $"./externals/tensorflow-lite-api-sources-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar");
 	
 	DownloadFile(TENSOR_FLOW_LITE_URL_AAR_VERSION, $"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_URL_POM_VERSION, "./externals/tensorflow-lite.pom");
@@ -69,10 +69,10 @@ Task("externals")
 	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-gpu-javadoc-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-gpu-sources-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
 	
-	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_AAR_VERSION, $"./externals/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_AAR_VERSION, $"./externals/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_POM_VERSION, "./externals/tensorflow-lite-gpu-api.pom");
-	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-gpu-api-javadoc-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
-	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-gpu-api-sources-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-gpu-api-javadoc-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-gpu-api-sources-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar");
 
 
 	Unzip ($"./externals/tensorflow-lite-api-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar", "./externals/tensorflow-lite-api-javadoc/");

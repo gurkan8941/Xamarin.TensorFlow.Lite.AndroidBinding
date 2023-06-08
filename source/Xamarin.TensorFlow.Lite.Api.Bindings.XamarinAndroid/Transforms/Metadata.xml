@@ -10,7 +10,7 @@
 	<!-- Change the override of a method -->
 	<!--<attr path="/api/package[@name='Xamarin.TensorFlow.Lite.Annotations']/class[@name='IUsedByReflectionInvoker']" name="visibility">public</attr>-->
 	
-	<attr
+	<!--<attr
 	path="/api/package[@name='org.tensorflow.lite']"
 	name="managedName"
         >
@@ -39,7 +39,7 @@
         name="managedName"
         >
 		Xamarin.TensorFlow.Lite.Acceleration
-	</attr>
+	</attr>-->
 
 	<!-- Change the override of a method -->
 	<!--<remove-node path="/api/package[@name='org.tensorflow.lite.annotations']/class[@name='IUsedByReflectionInvoker']/method[@name='ToString']" />-->
