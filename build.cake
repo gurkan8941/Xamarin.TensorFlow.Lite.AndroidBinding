@@ -4,10 +4,13 @@ var TARGET = Argument("t", Argument("target", "ci"));
 var TENSOR_FLOW_LITE_API_AAR_VERSION = "2.12.0";
 var TENSOR_FLOW_LITE_AAR_VERSION = "2.12.0";
 var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.12.0";
+var TENSOR_FLOW_LITE_GPU_API_AAR_VERSION = "2.12.0";
 
 var TENSOR_FLOW_LITE_NUGET_VERSION = "2.12.1";
 var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.12.1";
+var TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION = "2.12.1";
 var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.12.1";
+
 
 var TENSOR_FLOW_LITE_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar";
 var TENSOR_FLOW_LITE_API_URL_POM_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.pom";
@@ -21,15 +24,32 @@ var TENSOR_FLOW_LITE_URL_JAVADOC_VERSION = $"https://repo1.maven.org/maven2/org/
 var TENSOR_FLOW_LITE_URL_SOURCES_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite/{TENSOR_FLOW_LITE_AAR_VERSION}/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}-sources.aar";
 
 var TENSOR_FLOW_LITE_GPU_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu/{TENSOR_FLOW_LITE_GPU_AAR_VERSION}/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar";
+var TENSOR_FLOW_LITE_GPU_URL_POM_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu/{TENSOR_FLOW_LITE_GPU_AAR_VERSION}/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.pom";
+var TENSOR_FLOW_LITE_GPU_URL_JAVADOC_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu/{TENSOR_FLOW_LITE_GPU_AAR_VERSION}/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}-javadoc.aar";
+var TENSOR_FLOW_LITE_GPU_URL_SOURCES_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu/{TENSOR_FLOW_LITE_GPU_AAR_VERSION}/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}-sources.aar";
+
+
+var TENSOR_FLOW_LITE_GPU_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu-api/{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar";
+var TENSOR_FLOW_LITE_GPU_API_URL_POM_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu-api/{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.pom";
+var TENSOR_FLOW_LITE_GPU_API_URL_JAVADOC_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu-api/{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}-javadoc.aar";
+var TENSOR_FLOW_LITE_GPU_API_URL_SOURCES_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-gpu-api/{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}-sources.aar";
 
 Task("externals")
 	.WithCriteria(!FileExists($"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}.aar"))
-	.WithCriteria(!FileExists($"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}.pom"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite.pom"))
 	.WithCriteria(!FileExists($"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}-javadoc.aar"))
 	.WithCriteria(!FileExists($"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}-sources.aar"))
+	
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-api.pom"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}-javadoc.aar"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}-sources.aar"))
 
 	.WithCriteria(!FileExists($"./externals/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar"))
-	.WithCriteria(!FileExists($"./externals/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.pom"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-gpu.pom"))
+	
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar"))
+	.WithCriteria(!FileExists($"./externals/tensorflow-lite-gpu-api.pom"))
 	.Does(() => 
 {
 	EnsureDirectoryExists("./externals/");
@@ -39,13 +59,20 @@ Task("externals")
 	DownloadFile(TENSOR_FLOW_LITE_API_JAVADOC_VERSION, $"./externals/tensorflow-lite-api-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_API_SOURCES_VERSION, $"./externals/tensorflow-lite-api-sources-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 	
-	
 	DownloadFile(TENSOR_FLOW_LITE_URL_AAR_VERSION, $"./externals/tensorflow-lite-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_URL_POM_VERSION, "./externals/tensorflow-lite.pom");
 	DownloadFile(TENSOR_FLOW_LITE_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 	DownloadFile(TENSOR_FLOW_LITE_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-sources-{TENSOR_FLOW_LITE_AAR_VERSION}.aar");
 
 	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_AAR_VERSION, $"./externals/tensorflow-lite-gpu-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_POM_VERSION, "./externals/tensorflow-lite-gpu.pom");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-gpu-javadoc-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-gpu-sources-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_AAR_VERSION, $"./externals/tensorflow-lite-gpu-api-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_POM_VERSION, "./externals/tensorflow-lite-gpu-api.pom");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_JAVADOC_VERSION, $"./externals/tensorflow-lite-gpu-api-javadoc-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
+	DownloadFile(TENSOR_FLOW_LITE_GPU_API_URL_SOURCES_VERSION, $"./externals/tensorflow-lite-gpu-api-sources-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar");
 
 
 	Unzip ($"./externals/tensorflow-lite-api-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar", "./externals/tensorflow-lite-api-javadoc/");
@@ -53,13 +80,21 @@ Task("externals")
 
 	Unzip ($"./externals/tensorflow-lite-javadoc-{TENSOR_FLOW_LITE_AAR_VERSION}.aar", "./externals/tensorflow-lite-javadoc/");
 	Unzip ($"./externals/tensorflow-lite-sources-{TENSOR_FLOW_LITE_AAR_VERSION}.aar", "./externals/tensorflow-lite-sources/");
+	
+	Unzip ($"./externals/tensorflow-lite-gpu-javadoc-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar", "./externals/tensorflow-lite-gpu-javadoc/");
+	Unzip ($"./externals/tensorflow-lite-gpu-sources-{TENSOR_FLOW_LITE_GPU_AAR_VERSION}.aar", "./externals/tensorflow-lite-gpu-sources/");
+	
+	Unzip ($"./externals/tensorflow-lite-gpu-javadoc-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar", "./externals/tensorflow-lite-gpu-api-javadoc/");
+	Unzip ($"./externals/tensorflow-lite-gpu-sources-{TENSOR_FLOW_LITE_GPU_API_AAR_VERSION}.aar", "./externals/tensorflow-lite-gpu-api-sources/");
 
 	var csproj_01 = "./source/Xamarin.TensorFlow.Lite.Bindings.XamarinAndroid/Xamarin.TensorFlow.Lite.Bindings.XamarinAndroid.csproj";
 	var csproj_02 = "./source/Xamarin.TensorFlow.Lite.Gpu.Bindings.XamarinAndroid/Xamarin.TensorFlow.Lite.Gpu.Bindings.XamarinAndroid.csproj";
 	var csproj_03 = "./source/Xamarin.TensorFlow.Lite.Api.Bindings.XamarinAndroid/Xamarin.TensorFlow.Lite.Api.Bindings.XamarinAndroid.csproj";
+	var csproj_04 = "./source/Xamarin.TensorFlow.Lite.Gpu.Api.Bindings.XamarinAndroid/Xamarin.TensorFlow.Lite.Gpu.Api.Bindings.XamarinAndroid.csproj";
 	XmlPoke(csproj_01, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_NUGET_VERSION);
 	XmlPoke(csproj_02, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_GPU_NUGET_VERSION);
 	XmlPoke(csproj_03, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_API_NUGET_VERSION);
+	XmlPoke(csproj_04, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION);
 });
 
 Task("libs")

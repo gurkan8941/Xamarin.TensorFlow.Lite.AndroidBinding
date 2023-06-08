@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 
     <PropertyGroup>
-        <AssemblyName>Xamarin.TensorFlow.Lite.Gpu</AssemblyName>
+        <AssemblyName>org.tensorflow.tensorflow-lite-gpu</AssemblyName>
 		
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -9,7 +9,7 @@
         <AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
         <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
 
-        <TargetFrameworks>monoandroid90</TargetFrameworks>
+        <TargetFrameworks>monoandroid12.0</TargetFrameworks>
         <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     </PropertyGroup>
 
@@ -48,6 +48,7 @@
         <LibraryProjectZip Include="..\..\externals\tensorflow-lite-gpu-2.12.0.aar">
             <Link>Jars\tensorflow-lite-gpu.aar</Link>
         </LibraryProjectZip>
+		<EmbeddedReferenceJar Include="..\..\externals\tensorflow-lite-gpu-api-2.12.0.aar" Link="Jars\tensorflow-lite-gpu-api.aar" />
     </ItemGroup>
 
 	<ItemGroup>
@@ -55,6 +56,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Xamarin.TensorFlow.Lite.Bindings.XamarinAndroid\Xamarin.TensorFlow.Lite.Bindings.XamarinAndroid.csproj" />
+      <ProjectReference Include="..\Xamarin.TensorFlow.Lite.Gpu.Api.Bindings.XamarinAndroid\Xamarin.TensorFlow.Lite.Gpu.Api.Bindings.XamarinAndroid.csproj" />
     </ItemGroup>
 	<ItemGroup>
       <None Remove="Transforms\Metadata.xml" />

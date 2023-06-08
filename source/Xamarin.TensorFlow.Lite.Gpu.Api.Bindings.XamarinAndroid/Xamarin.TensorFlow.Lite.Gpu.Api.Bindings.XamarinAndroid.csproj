@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 
 	<PropertyGroup>
-		<AssemblyName>org.tensorflow.tensorflow-lite-api</AssemblyName>
+		<AssemblyName>org.tensorflow.tensorflow-lite-gpu-api</AssemblyName>
 		
 		<MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
 		<MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -23,11 +23,11 @@
         nuget packaging
         -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>Xamarin.TensorFlow.Lite.Api</PackageId>
+		<PackageId>Xamarin.TensorFlow.Lite.Gpu.Api</PackageId>
 		<PackageVersion>2.12.1</PackageVersion>
-		<Title>Xamarin.TensorFlow.Lite.Api</Title>
+		<Title>Xamarin.TensorFlow.Lite.Gpu.Api</Title>
 		<PackageDescription>
-			Bindings for Google's TensorFlow Lite package (Google Play Services dependency)
+			Bindings for Google's TensorFlow Lite GPU api package (Google Play Services dependency)
 		</PackageDescription>
 		<Owners>Microsoft</Owners>
 		<Authors>Microsoft</Authors>
@@ -45,8 +45,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<LibraryProjectZip Include="..\..\externals\tensorflow-lite-api-2.12.0.aar">
-			<Link>Jars\tensorflow-lite-api.aar</Link>
+		<LibraryProjectZip Include="..\..\externals\tensorflow-lite-gpu-api-2.12.0.aar">
+			<Link>Jars\tensorflow-lite-gpu-api.aar</Link>
 		</LibraryProjectZip>
 	</ItemGroup>
 
@@ -60,6 +60,9 @@
         <JavaDocJar Include="..\..\externals\tensorflow-lite-javadoc.aar" />
         <JavaSourceJar Include="..\..\externals\tensorflow-lite-sources.aar" />
         -->
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Xamarin.TensorFlow.Lite.Api.Bindings.XamarinAndroid\Xamarin.TensorFlow.Lite.Api.Bindings.XamarinAndroid.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Remove="Transforms\Metadata.xml" />
