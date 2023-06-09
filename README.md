@@ -32,11 +32,12 @@ dotnet cake
 
 It will download dependencies from Maven (to /externals directory), compile the code and package the nugets.
 
-Output will be 3 nugets (in /output directory):
+Output will be 4 nugets (in /output directory):
 
 * Xamarin.TensorFlow.Lite
 * Xamarin.TensorFlow.Lite.Api
 * Xamarin.TensorFlow.Lite.Gpu
+* Xamarin.TensorFlow.Lite.Gpu.Api
 
 Install nugets to your Xamarin Android project.
 
