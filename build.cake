@@ -1,15 +1,17 @@
 
 var TARGET = Argument("t", Argument("target", "ci"));
 
-var TENSOR_FLOW_LITE_API_AAR_VERSION = "2.12.0";
-var TENSOR_FLOW_LITE_AAR_VERSION = "2.12.0";
-var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.12.0";
-var TENSOR_FLOW_LITE_GPU_API_AAR_VERSION = "2.12.0";
+var TENSOR_FLOW_LITE_API_AAR_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_AAR_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_GPU_AAR_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_GPU_API_AAR_VERSION = "2.14.0";
 
-var TENSOR_FLOW_LITE_NUGET_VERSION = "2.12.2";
-var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.12.2";
-var TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION = "2.12.2";
-var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.12.2";
+var TENSOR_FLOW_LITE_NUGET_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_GPU_NUGET_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION = "2.14.0";
+var TENSOR_FLOW_LITE_API_NUGET_VERSION = "2.14.0";
+
+var AUTHOR = "MLXamarinGeeks";
 
 
 var TENSOR_FLOW_LITE_API_URL_AAR_VERSION = $"https://repo1.maven.org/maven2/org/tensorflow/tensorflow-lite-api/{TENSOR_FLOW_LITE_API_AAR_VERSION}/tensorflow-lite-api-{TENSOR_FLOW_LITE_API_AAR_VERSION}.aar";
@@ -95,6 +97,11 @@ Task("externals")
 	XmlPoke(csproj_02, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_GPU_NUGET_VERSION);
 	XmlPoke(csproj_03, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_API_NUGET_VERSION);
 	XmlPoke(csproj_04, "/Project/PropertyGroup/PackageVersion", TENSOR_FLOW_LITE_GPU_API_NUGET_VERSION);
+	
+	XmlPoke(csproj_01, "/Project/PropertyGroup/Authors", AUTHOR);
+	XmlPoke(csproj_02, "/Project/PropertyGroup/Authors", AUTHOR);
+	XmlPoke(csproj_03, "/Project/PropertyGroup/Authors", AUTHOR);
+	XmlPoke(csproj_04, "/Project/PropertyGroup/Authors", AUTHOR);
 });
 
 Task("libs")

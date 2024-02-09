@@ -2,10 +2,12 @@
 
 TensorFlow Lite bindings for Xamarin.Android
 
-**Current code will bind TensorFlow.Lite 2.12.0**
+**Current code will bind TensorFlow.Lite 2.14.0**
 
 This codebase originates from: https://github.com/xamarin/XamarinComponents
-but is updated to bind tensorflow lite 2.12.0
+but is updated to bind tensorflow lite 2.14.0
+I have added bindings for GPU-support because the original bindings did not include all classes correctly.
+The output nugets both target MonoAndroid12.0 (Xamarin) and .net7.0-android (MAUI).
 
 
  * GitHub project: https://github.com/tensorflow/tensorflow/ 

@@ -9,7 +9,7 @@
         <AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
         <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
 
-        <TargetFrameworks>monoandroid12.0</TargetFrameworks>
+        <TargetFrameworks>monoandroid12.0;net7.0-android</TargetFrameworks>
         <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     </PropertyGroup>
 
@@ -24,13 +24,13 @@
         -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Xamarin.TensorFlow.Lite</PackageId>
-        <PackageVersion>2.12.2</PackageVersion>
+        <PackageVersion>2.14.0</PackageVersion>
         <Title>Xamarin.TensorFlow.Lite</Title>
         <PackageDescription>
             Bindings for Google's TensorFlow Lite package (Google Play Services dependency)
         </PackageDescription>
         <Owners>Microsoft</Owners>
-        <Authors>Microsoft</Authors>
+        <Authors>MLXamarinGeeks</Authors>
         <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
         <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=2013315</PackageLicenseUrl>
         <PackageProjectUrl>https://go.microsoft.com/fwlink/?linkid=2013420</PackageProjectUrl>
@@ -45,7 +45,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <LibraryProjectZip Include="..\..\externals\tensorflow-lite-2.12.0.aar">
+        <LibraryProjectZip Include="..\..\externals\tensorflow-lite-2.14.0.aar">
             <Link>Jars\tensorflow-lite.aar</Link>
         </LibraryProjectZip>
     </ItemGroup>
